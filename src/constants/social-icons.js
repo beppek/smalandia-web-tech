@@ -4,10 +4,10 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 export default [
   {
     icon: <FaLinkedinIn />,
-    url: "https://www.linkedin.com/in/morgan-baker-developer-inverness/",
+    url: "https://www.linkedin.com/in/beppek/",
   },
   {
     icon: <FaGithub />,
-    url: "https://github.com/bagseye",
+    url: "https://github.com/beppek",
   },
 ]

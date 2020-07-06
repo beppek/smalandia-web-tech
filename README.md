@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://thestartup.netlify.app">
-    <img alt="Startup Logo" src="/src/images/startup-logo-black.svg" width="200" />
+    <img alt="Startup Logo" src="/src/images/smalandia-logo.png" width="200" />
   </a>
 </p>
 <h1 align="center">

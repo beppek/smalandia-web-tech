@@ -1,23 +1,74 @@
-import React from "react"
+import React, { useReducer } from "react"
 import styled from "styled-components"
 import Button from "../Button/button"
 
+const ACTIONS = {
+  setName: "setName",
+  setMessage: "setMessage",
+  setEmail: "setEmail",
+}
+
+const initialState = {
+  name: "",
+  message: "",
+  email: "",
+}
+
+const actions = {
+  [ACTIONS.setName]: (state, payload) => ({ ...state, name: payload }),
+  [ACTIONS.setMessage]: (state, payload) => ({ ...state, message: payload }),
+  [ACTIONS.setEmail]: (state, payload) => ({ ...state, email: payload }),
+}
+
+function reducer(state, action) {
+  try {
+    return actions[action.type](state, action.payload)
+  } catch (error) {
+    throw new Error("Invalid action type")
+  }
+}
+
 const Contact = ({ title, subtitle, id }) => {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const handleSubmit = e => {
+    // e.preventDefault()
+    console.log("state", state)
+  }
+
   return (
     <ContactWrapper id="contact">
       <div className="content-container">
         <h2>{title}</h2>
         <p>{subtitle}</p>
-        <form name="contact" netlify>
+        <form netlify onSubmit={handleSubmit} name="contact" netlify>
           <div className="input-area">
-            <input type="text" name="name" required autocomplete="off" />
+            <input
+              onChange={({ target: { value } }) =>
+                dispatch({ type: ACTIONS.setName, payload: value })
+              }
+              type="text"
+              name="name"
+              value={state.name}
+              required
+              autocomplete="off"
+            />
             <label className="label-name">
               <span className="content-name">Name</span>
             </label>
           </div>
 
           <div className="input-area">
-            <input type="email" name="email" required autocomplete="off" />
+            <input
+              onChange={({ target: { value } }) =>
+                dispatch({ type: ACTIONS.setEmail, payload: value })
+              }
+              type="email"
+              name="email"
+              value={state.email}
+              required
+              autocomplete="off"
+            />
             <label className="label-name">
               <span className="content-name">Email</span>
             </label>
@@ -25,11 +76,15 @@ const Contact = ({ title, subtitle, id }) => {
 
           <div className="input-area">
             <textarea
+              onChange={({ target: { value } }) =>
+                dispatch({ type: ACTIONS.setMessage, payload: value })
+              }
               type="text"
               name="message"
               rows="5"
               required
               autocomplete="off"
+              value={state.message}
             />
             <label className="label-name">
               <span className="content-name">Message</span>

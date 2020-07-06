@@ -23,8 +23,8 @@ export default () => (
       <Banner />
       <TextBlock
         id="about"
-        title="Developing a new business is never easy, but Startup is here to help"
-        paragraph="With a super-fast Gatsby powered website you have the perfect platform to get your idea off the ground. Its the perfect template to help turn your idea into a reality."
+        title="Developing a business is never easy, but Smålandia Web Technologies is here to help"
+        paragraph="We build modern web solutions that scale so you can focus on your business while we focus on your tech."
       >
         <Link to="perks" smooth={true} duration={500}>
           <Button cta="Tell Me More!" />
@@ -33,9 +33,7 @@ export default () => (
       <TextBlockImg
         id="perks"
         title="We have the tools to help you suceed"
-        subtitle="Startup is perfect for helping to to start and grow your business. As
-          you begin to gain new clients and expand you will see the benefits of
-          a super-fast Gatsby website"
+        subtitle="Smålandia web technologies has the expertise and know how to guide you in the digital landscape. Our solutions will help you stand out on the playing field."
       >
         <div className="flex-container trio-block">
           <Perk
@@ -52,15 +50,15 @@ export default () => (
           />
           <Perk
             img={perk3Img}
-            alt="Super fast speed increases"
+            alt="Great service"
             title="Friendly"
-            content="Advisors who are available 24/7, all with exprt knowledge"
+            content="We don't just deliver a product, we deliver a service"
           />
         </div>
       </TextBlockImg>
       <Packages
         title="Our Packages"
-        para="Choose the perfect solution for you. With benefits to suit all budgets Startup can offer amazing value and expert advice"
+        para="Once the project is completed we stick around and help you grow your online presence. Choose the perfect solution for you. With benefits to suit all budgets Smålandia can offer amazing value and expert advice"
       >
         <IconContext.Provider
           value={{
@@ -69,22 +67,23 @@ export default () => (
             style: { verticalAlign: "middle", marginRight: "5px" },
           }}
         >
-          <Package title="Standard">
+          <Package title="Standard Retainer">
             <ul>
               <li>
-                <MdDone />1 User
+                <MdDone />
+                Advice
               </li>
               <li>
                 <MdDone />
-                1GB Storage
+                Consultations
               </li>
               <li className="linethrough">
                 <MdClear color="red" />
-                Dedicated Advisor
+                Support
               </li>
               <li className="linethrough">
                 <MdClear color="red" />
-                24/7 Support
+                Development
               </li>
             </ul>
             <Link to="contact" smooth={true} duration={500}>
@@ -92,22 +91,19 @@ export default () => (
             </Link>
           </Package>
           <Package title="Hyper" active={true}>
+            <p>All from Standard +</p>
             <ul>
               <li>
                 <MdDone />
-                24/7 Support
+                Support
               </li>
               <li>
                 <MdDone />
-                Dedicated Advisor
+                Planning
               </li>
               <li>
                 <MdDone />
-                Unlimited Storage
-              </li>
-              <li>
-                <MdDone />
-                Unlimited Users
+                Code Reviews
               </li>
             </ul>
             <Link to="contact" smooth={true} duration={500}>
@@ -115,22 +111,15 @@ export default () => (
             </Link>
           </Package>
           <Package title="Super">
+            <p>All from Hyper +</p>
             <ul>
               <li>
                 <MdDone />
-                10 Users
+                Technical Direction
               </li>
               <li>
                 <MdDone />
-                500GB Storage
-              </li>
-              <li>
-                <MdDone />
-                Advice Support
-              </li>
-              <li className="linethrough">
-                <MdClear color="red" />
-                Dedicated Advisor
+                Dedicated Consultation
               </li>
             </ul>
             <Link to="contact" smooth={true} duration={500}>
@@ -141,8 +130,8 @@ export default () => (
       </Packages>
       <Contact
         id="contact"
-        title="Contact Startup today and see how we can help your business grow"
-        subtitle="Every second counts when you're looking to get your new business started. Drop Startup a message and one of our representatives will be in contact"
+        title="Contact Smålandia today and see how we can help your business grow online"
+        subtitle="Every second counts when you're looking to grow your online presence. Drop Smålandia a message and we'll get back to you as soon as possible"
       />
     </Layout>
   </>
